@@ -73,13 +73,13 @@ class movieViewController: UIViewController {
         
         do {
             let decoded  = UserDefaults.standard.object(forKey: "favorites") as? Data
-            
+
             if (decoded != nil) {
                 listOfMovies = try jsonDecoder.decode([Movie].self, from: decoded!)
             }
 
             listOfMovies.append(movie!)
-            
+
             let jsonData = try jsonEncoder.encode(listOfMovies)
             UserDefaults.standard.setValue(jsonData, forKey: "favorites")
         } catch {
