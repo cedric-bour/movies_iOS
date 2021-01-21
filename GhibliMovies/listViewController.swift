@@ -12,37 +12,6 @@ import Alamofire
 
 private let reuseIdentifier = "Cell"
 
-class Movie: NSObject, Codable {
-    var id: String?
-    var title: String?
-    var descriptions: String?
-    var director: String?
-    var producer: String?
-    var release_date: String?
-    var rt_score: String?
-    var url: String?
-    var director2: Actors?
-    var producer2: Actors?
-    
-    enum CodingKeys: String, CodingKey {
-        case id, title, descriptions, director, producer, release_date, rt_score, url
-    }
-}
-
-class Actors: NSObject, Codable {
-    var id: String?
-    var surname: String?
-    var name: String?
-    var naissance: String?
-    var lieu: String?
-    var descriptions: String?
-    var url: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case id, surname, name, naissance, lieu, descriptions, url
-    }
-}
-
 class listViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     private var items: [[String:String]] = []
@@ -70,14 +39,14 @@ class listViewController: UIViewController, UICollectionViewDataSource, UICollec
                     
                     AF.request("http://92.222.22.146:3000/actors?number=" + String(movieCreated.director!))
                     .validate(statusCode: [200])
-                    .responseDecodable(of: Actors.self) {[weak self] (resp) in
+                    .responseDecodable(of: Actor.self) {[weak self] (resp) in
                         switch resp.result {
                         case .success(let directorCreate):
                             movieCreated.director2 = directorCreate
                             
                             AF.request("http://92.222.22.146:3000/actors?number=" + String(movieCreated.producer!))
                             .validate(statusCode: [200])
-                            .responseDecodable(of: Actors.self) {[weak self] (resp) in
+                            .responseDecodable(of: Actor.self) {[weak self] (resp) in
                                 switch resp.result {
                                 case .success(let productorCreate):
                                     movieCreated.producer2 = productorCreate

@@ -66,18 +66,22 @@ class movieViewController: UIViewController {
     
     @objc func imageTapped2(tapGestureRecognizer2: UITapGestureRecognizer)
     {
+        let jsonEncoder = JSONEncoder()
+        let jsonDecoder = JSONDecoder()
+        
+        var listOfMovies: [Movie] = []
+        
         do {
+            let decoded  = UserDefaults.standard.object(forKey: "favorites") as? Data
             
-            let jsonEncoder = JSONEncoder()
-            let jsonData = try jsonEncoder.encode(movie)
-            let json = String(data: jsonData, encoding: String.Encoding.utf16)
-            UserDefaults.standard.setValue(json, forKey: "favorites")
+            if (decoded != nil) {
+                listOfMovies = try jsonDecoder.decode([Movie].self, from: decoded!)
+            }
+
+            listOfMovies.append(movie!)
             
-            let decoded  = UserDefaults.standard.object(forKey: "favorites") as? String
-            let jsonDecoder = JSONDecoder()
-            let secondDog = try jsonDecoder.decode(Movie.self, from: decoded as! Data)
-//
-//            print(secondDog.title!)
+            let jsonData = try jsonEncoder.encode(listOfMovies)
+            UserDefaults.standard.setValue(jsonData, forKey: "favorites")
         } catch {
             print("error here")
         }

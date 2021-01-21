@@ -229,7 +229,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hsv-7B-hWc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="590.76923076923072" y="92.417061611374407"/>
+            <point key="canvasLocation" x="589.85507246376812" y="92.410714285714278"/>
         </scene>
         <!--Actor View Controller-->
         <scene sceneID="2Kz-ma-t6t">
@@ -340,6 +340,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qcD-Bz-SiZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2028" y="93"/>
+        </scene>
+        <!--List Favorites View Controller-->
+        <scene sceneID="Vjm-el-JRP">
+            <objects>
+                <viewController id="ey2-iF-unb" customClass="listFavoritesViewController" customModule="GhibliMovies" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fvP-dV-bJb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="FMz-0u-5bf">
+                                <rect key="frame" x="0.0" y="164" width="414" height="732"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aw4-Hu-q1i">
+                                    <size key="itemSize" width="268" height="246"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="30" minY="0.0" maxX="30" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="dJA-1V-Chu" customClass="CollectionViewCell" customModule="GhibliMovies" customModuleProvider="target">
+                                        <rect key="frame" x="73" y="0.0" width="268" height="246"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="268" height="246"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="sWI-tA-PgW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="177" height="170"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="sWI-tA-PgW" firstAttribute="top" secondItem="dJA-1V-Chu" secondAttribute="top" id="3Pz-u9-8qJ"/>
+                                            <constraint firstItem="sWI-tA-PgW" firstAttribute="leading" secondItem="dJA-1V-Chu" secondAttribute="leading" id="H7p-d2-PQI"/>
+                                            <constraint firstAttribute="trailing" secondItem="sWI-tA-PgW" secondAttribute="trailing" id="Jib-eI-C9s"/>
+                                            <constraint firstAttribute="bottom" secondItem="sWI-tA-PgW" secondAttribute="bottom" id="Tft-bf-RYV"/>
+                                        </constraints>
+                                        <size key="customSize" width="268" height="246"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="ey2-iF-unb" id="Kiy-Fm-Icw"/>
+                                    <outlet property="delegate" destination="ey2-iF-unb" id="WXw-28-66m"/>
+                                </connections>
+                            </collectionView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="B69-uP-rW0">
+                                <rect key="frame" x="50" y="44" width="314" height="112"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1ZW-xF-r5S"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="B69-uP-rW0" firstAttribute="top" secondItem="1ZW-xF-r5S" secondAttribute="top" id="Rbk-Eo-Yiz"/>
+                            <constraint firstItem="B69-uP-rW0" firstAttribute="leading" secondItem="1ZW-xF-r5S" secondAttribute="leading" constant="50" id="TPf-dc-lus"/>
+                            <constraint firstItem="FMz-0u-5bf" firstAttribute="top" secondItem="B69-uP-rW0" secondAttribute="bottom" constant="8" id="tDQ-QB-sj2"/>
+                            <constraint firstItem="1ZW-xF-r5S" firstAttribute="trailing" secondItem="B69-uP-rW0" secondAttribute="trailing" constant="50" id="vF9-dX-0Sn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="vwH-PU-e3u"/>
+                    <connections>
+                        <outlet property="collView" destination="FMz-0u-5bf" id="kSB-je-dNS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B1I-gb-ovQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2749" y="92"/>
         </scene>
     </scenes>
     <resources>
