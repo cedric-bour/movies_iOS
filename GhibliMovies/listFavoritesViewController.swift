@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import Alamofire
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "Cell2"
 
 class listFavoritesViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -57,7 +57,7 @@ class listFavoritesViewController: UIViewController, UICollectionViewDataSource,
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell: CollectionViewCell? = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? CollectionViewCell
+        let cell: FavorisCollectionViewCell? = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell2", for: indexPath) as? FavorisCollectionViewCell
         
         guard let sureCell = cell else {
             return UICollectionViewCell()

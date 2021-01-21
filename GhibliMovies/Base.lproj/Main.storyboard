@@ -169,6 +169,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="VUt-6V-PsQ">
+                                <rect key="frame" x="107" y="88" width="200" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="JII-PM-EcB"/>
+                                    <constraint firstAttribute="width" constant="200" id="lov-96-iT4"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favoris" translatesAutoresizingMaskIntoConstraints="NO" id="wAz-1X-aZO">
+                                <rect key="frame" x="339" y="98" width="66" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="1bv-Id-GrM"/>
+                                    <constraint firstAttribute="width" constant="66" id="zep-Cj-aVN"/>
+                                </constraints>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="BJx-kn-pZO">
                                 <rect key="frame" x="0.0" y="164" width="414" height="732"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -209,22 +223,20 @@
                                     <outlet property="delegate" destination="wbk-1H-KSG" id="7In-SD-UkL"/>
                                 </connections>
                             </collectionView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="VUt-6V-PsQ">
-                                <rect key="frame" x="50" y="88" width="314" height="68"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KBk-l3-K4d"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="KBk-l3-K4d" firstAttribute="trailing" secondItem="VUt-6V-PsQ" secondAttribute="trailing" constant="50" id="6GM-x8-kuA"/>
-                            <constraint firstItem="VUt-6V-PsQ" firstAttribute="leading" secondItem="KBk-l3-K4d" secondAttribute="leading" constant="50" id="A72-6I-OWa"/>
-                            <constraint firstItem="VUt-6V-PsQ" firstAttribute="top" secondItem="KBk-l3-K4d" secondAttribute="top" id="Htp-Dw-zEG"/>
-                            <constraint firstItem="BJx-kn-pZO" firstAttribute="top" secondItem="VUt-6V-PsQ" secondAttribute="bottom" constant="8" id="t5g-SX-0wP"/>
+                            <constraint firstItem="VUt-6V-PsQ" firstAttribute="centerX" secondItem="aBd-8y-VhZ" secondAttribute="centerX" id="9JK-KL-7aZ"/>
+                            <constraint firstItem="KBk-l3-K4d" firstAttribute="trailing" secondItem="wAz-1X-aZO" secondAttribute="trailing" constant="9" id="i1s-1V-dxW"/>
+                            <constraint firstItem="VUt-6V-PsQ" firstAttribute="top" secondItem="KBk-l3-K4d" secondAttribute="top" id="nkn-mN-Eqe"/>
+                            <constraint firstItem="wAz-1X-aZO" firstAttribute="top" secondItem="KBk-l3-K4d" secondAttribute="top" constant="10" id="rMF-UP-JBl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jh2-5y-aL2"/>
                     <connections>
                         <outlet property="collView" destination="BJx-kn-pZO" id="bPp-cj-YAf"/>
+                        <outlet property="favoView" destination="wAz-1X-aZO" id="qLx-f3-7F9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hsv-7B-hWc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -344,11 +356,14 @@
         <!--List Favorites View Controller-->
         <scene sceneID="Vjm-el-JRP">
             <objects>
-                <viewController id="ey2-iF-unb" customClass="listFavoritesViewController" customModule="GhibliMovies" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="viewFavorites" id="ey2-iF-unb" customClass="listFavoritesViewController" customModule="GhibliMovies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fvP-dV-bJb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="B69-uP-rW0">
+                                <rect key="frame" x="50" y="44" width="314" height="112"/>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="FMz-0u-5bf">
                                 <rect key="frame" x="0.0" y="164" width="414" height="732"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -360,7 +375,7 @@
                                     <inset key="sectionInset" minX="30" minY="0.0" maxX="30" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="dJA-1V-Chu" customClass="CollectionViewCell" customModule="GhibliMovies" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell2" id="dJA-1V-Chu" customClass="FavorisCollectionViewCell" customModule="GhibliMovies" customModuleProvider="target">
                                         <rect key="frame" x="73" y="0.0" width="268" height="246"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -379,16 +394,16 @@
                                             <constraint firstAttribute="bottom" secondItem="sWI-tA-PgW" secondAttribute="bottom" id="Tft-bf-RYV"/>
                                         </constraints>
                                         <size key="customSize" width="268" height="246"/>
+                                        <connections>
+                                            <outlet property="cellImageView" destination="sWI-tA-PgW" id="aBW-dT-0dg"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="ey2-iF-unb" id="Kiy-Fm-Icw"/>
-                                    <outlet property="delegate" destination="ey2-iF-unb" id="WXw-28-66m"/>
+                                    <outlet property="dataSource" destination="ey2-iF-unb" id="2KW-rb-hJM"/>
+                                    <outlet property="delegate" destination="ey2-iF-unb" id="yUH-TC-LMA"/>
                                 </connections>
                             </collectionView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="B69-uP-rW0">
-                                <rect key="frame" x="50" y="44" width="314" height="112"/>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1ZW-xF-r5S"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -401,7 +416,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="vwH-PU-e3u"/>
                     <connections>
-                        <outlet property="collView" destination="FMz-0u-5bf" id="kSB-je-dNS"/>
+                        <outlet property="collView" destination="FMz-0u-5bf" id="MYw-1u-1HT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B1I-gb-ovQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -410,6 +425,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="favoris" width="256" height="256"/>
         <image name="favorties" width="341" height="85"/>
         <image name="line_blue" width="100" height="12"/>
         <image name="logo" width="256" height="123"/>

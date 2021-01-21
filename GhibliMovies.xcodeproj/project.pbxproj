@@ -20,6 +20,7 @@
 		C2A9A7DE25B9BBC700A08873 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A9A7DD25B9BBC700A08873 /* Movie.swift */; };
 		C2A9A7E125B9BC0300A08873 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A9A7E025B9BC0300A08873 /* Actor.swift */; };
 		C2A9A7E425B9BC5100A08873 /* listFavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A9A7E325B9BC5100A08873 /* listFavoritesViewController.swift */; };
+		C2A9A7E725B9C68300A08873 /* FavorisCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A9A7E625B9C68300A08873 /* FavorisCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		C2A9A7DD25B9BBC700A08873 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		C2A9A7E025B9BC0300A08873 /* Actor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
 		C2A9A7E325B9BC5100A08873 /* listFavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listFavoritesViewController.swift; sourceTree = "<group>"; };
+		C2A9A7E625B9C68300A08873 /* FavorisCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavorisCollectionViewCell.swift; sourceTree = "<group>"; };
 		F093990378C1090A95CC3E3D /* Pods-GhibliMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhibliMovies.debug.xcconfig"; path = "Target Support Files/Pods-GhibliMovies/Pods-GhibliMovies.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,7 @@
 				C25FF2AE25B8F34C00FFDCB7 /* listViewController.swift */,
 				C2A9A7E325B9BC5100A08873 /* listFavoritesViewController.swift */,
 				C27E448125B89A3600345395 /* CollectionViewCell.swift */,
+				C2A9A7E625B9C68300A08873 /* FavorisCollectionViewCell.swift */,
 				C25FF29425B8E13F00FFDCB7 /* movieViewController.swift */,
 				C25FF2F225B91E2F00FFDCB7 /* actorViewController.swift */,
 				C27E446425B88E1000345395 /* Main.storyboard */,
@@ -218,6 +221,7 @@
 				C27E445F25B88E1000345395 /* AppDelegate.swift in Sources */,
 				C25FF2F325B91E2F00FFDCB7 /* actorViewController.swift in Sources */,
 				C25FF29525B8E13F00FFDCB7 /* movieViewController.swift in Sources */,
+				C2A9A7E725B9C68300A08873 /* FavorisCollectionViewCell.swift in Sources */,
 				C2A9A7E425B9BC5100A08873 /* listFavoritesViewController.swift in Sources */,
 				C27E448225B89A3600345395 /* CollectionViewCell.swift in Sources */,
 				C27E446125B88E1000345395 /* SceneDelegate.swift in Sources */,

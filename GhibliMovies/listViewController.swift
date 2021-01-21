@@ -18,6 +18,8 @@ class listViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @IBOutlet weak var collView: UICollectionView!
     
+    @IBOutlet weak var favoView: UIImageView!
+    
     private var listOfMovies: [Movie] = []
     
     override func viewDidLoad() {
@@ -26,9 +28,23 @@ class listViewController: UIViewController, UICollectionViewDataSource, UICollec
         collView.delegate = self
         collView.dataSource = self
         
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        favoView.isUserInteractionEnabled = true
+        favoView.addGestureRecognizer(tapGestureRecognizer)
+    
         loadMovies()
     }
-    
+
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "viewFavorites") as! listFavoritesViewController
+        
+        let navController = navigationController
+        navController!.pushViewController(vc, animated: true)
+    }
+
     private func loadMovie(val num: Int) {
         AF
             .request("http://92.222.22.146:3000/movies?number=" + String(num))
