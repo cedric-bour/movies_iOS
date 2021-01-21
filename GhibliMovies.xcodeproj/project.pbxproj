@@ -7,23 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9631BB89653BABB40BD246E4 /* libPods-GhibliMovies.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20C3F8F6B996588AC1B765B6 /* libPods-GhibliMovies.a */; };
+		C25FF29525B8E13F00FFDCB7 /* movieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25FF29425B8E13F00FFDCB7 /* movieViewController.swift */; };
+		C25FF2AF25B8F34C00FFDCB7 /* listViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25FF2AE25B8F34C00FFDCB7 /* listViewController.swift */; };
+		C25FF2F325B91E2F00FFDCB7 /* actorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25FF2F225B91E2F00FFDCB7 /* actorViewController.swift */; };
 		C27E445F25B88E1000345395 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27E445E25B88E1000345395 /* AppDelegate.swift */; };
 		C27E446125B88E1000345395 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27E446025B88E1000345395 /* SceneDelegate.swift */; };
-		C27E446325B88E1000345395 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27E446225B88E1000345395 /* ViewController.swift */; };
 		C27E446625B88E1000345395 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C27E446425B88E1000345395 /* Main.storyboard */; };
 		C27E446825B88E1100345395 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C27E446725B88E1100345395 /* Assets.xcassets */; };
 		C27E446B25B88E1100345395 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C27E446925B88E1100345395 /* LaunchScreen.storyboard */; };
+		C27E448225B89A3600345395 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27E448125B89A3600345395 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		20C3F8F6B996588AC1B765B6 /* libPods-GhibliMovies.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GhibliMovies.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		95ACD4DA7D98E23DE02A2FD9 /* Pods-GhibliMovies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhibliMovies.release.xcconfig"; path = "Target Support Files/Pods-GhibliMovies/Pods-GhibliMovies.release.xcconfig"; sourceTree = "<group>"; };
+		C25FF29425B8E13F00FFDCB7 /* movieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movieViewController.swift; sourceTree = "<group>"; };
+		C25FF2AE25B8F34C00FFDCB7 /* listViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listViewController.swift; sourceTree = "<group>"; };
+		C25FF2F225B91E2F00FFDCB7 /* actorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = actorViewController.swift; sourceTree = "<group>"; };
 		C27E445B25B88E1000345395 /* GhibliMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GhibliMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C27E445E25B88E1000345395 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C27E446025B88E1000345395 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C27E446225B88E1000345395 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C27E446525B88E1000345395 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C27E446725B88E1100345395 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C27E446A25B88E1100345395 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C27E446C25B88E1100345395 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C27E448125B89A3600345395 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		F093990378C1090A95CC3E3D /* Pods-GhibliMovies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GhibliMovies.debug.xcconfig"; path = "Target Support Files/Pods-GhibliMovies/Pods-GhibliMovies.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +41,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9631BB89653BABB40BD246E4 /* libPods-GhibliMovies.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A591F897F904CC5CC26B2877 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20C3F8F6B996588AC1B765B6 /* libPods-GhibliMovies.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C27E445225B88E1000345395 = {
 			isa = PBXGroup;
 			children = (
 				C27E445D25B88E1000345395 /* GhibliMovies */,
 				C27E445C25B88E1000345395 /* Products */,
+				DE03D307412D7C2819018008 /* Pods */,
+				A591F897F904CC5CC26B2877 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +79,25 @@
 			children = (
 				C27E445E25B88E1000345395 /* AppDelegate.swift */,
 				C27E446025B88E1000345395 /* SceneDelegate.swift */,
-				C27E446225B88E1000345395 /* ViewController.swift */,
+				C25FF2AE25B8F34C00FFDCB7 /* listViewController.swift */,
+				C27E448125B89A3600345395 /* CollectionViewCell.swift */,
+				C25FF29425B8E13F00FFDCB7 /* movieViewController.swift */,
+				C25FF2F225B91E2F00FFDCB7 /* actorViewController.swift */,
 				C27E446425B88E1000345395 /* Main.storyboard */,
 				C27E446725B88E1100345395 /* Assets.xcassets */,
 				C27E446925B88E1100345395 /* LaunchScreen.storyboard */,
 				C27E446C25B88E1100345395 /* Info.plist */,
 			);
 			path = GhibliMovies;
+			sourceTree = "<group>";
+		};
+		DE03D307412D7C2819018008 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F093990378C1090A95CC3E3D /* Pods-GhibliMovies.debug.xcconfig */,
+				95ACD4DA7D98E23DE02A2FD9 /* Pods-GhibliMovies.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +107,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C27E446F25B88E1100345395 /* Build configuration list for PBXNativeTarget "GhibliMovies" */;
 			buildPhases = (
+				D6D847432DA54B53D601D5A3 /* [CP] Check Pods Manifest.lock */,
 				C27E445725B88E1000345395 /* Sources */,
 				C27E445825B88E1000345395 /* Frameworks */,
 				C27E445925B88E1000345395 /* Resources */,
@@ -132,13 +166,41 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D6D847432DA54B53D601D5A3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GhibliMovies-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C27E445725B88E1000345395 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C27E446325B88E1000345395 /* ViewController.swift in Sources */,
+				C25FF2AF25B8F34C00FFDCB7 /* listViewController.swift in Sources */,
 				C27E445F25B88E1000345395 /* AppDelegate.swift in Sources */,
+				C25FF2F325B91E2F00FFDCB7 /* actorViewController.swift in Sources */,
+				C25FF29525B8E13F00FFDCB7 /* movieViewController.swift in Sources */,
+				C27E448225B89A3600345395 /* CollectionViewCell.swift in Sources */,
 				C27E446125B88E1000345395 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +345,7 @@
 		};
 		C27E447025B88E1100345395 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F093990378C1090A95CC3E3D /* Pods-GhibliMovies.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -301,6 +364,7 @@
 		};
 		C27E447125B88E1100345395 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95ACD4DA7D98E23DE02A2FD9 /* Pods-GhibliMovies.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

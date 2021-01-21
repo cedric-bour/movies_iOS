@@ -1,0 +1,154 @@
+//
+//  listViewController.swift
+//  GhibliMovies
+//
+//  Created by Cédric B. on 21/01/2021.
+//
+
+import UIKit
+
+import Foundation
+import Alamofire
+
+private let reuseIdentifier = "Cell"
+
+class Movie: NSObject, Codable {
+    var id: String?
+    var title: String?
+    var descriptions: String?
+    var director: String?
+    var producer: String?
+    var release_date: String?
+    var rt_score: String?
+    var url: String?
+    var director2: Actors?
+    var producer2: Actors?
+    
+    enum CodingKeys: String, CodingKey {
+        case id, title, descriptions, director, producer, release_date, rt_score, url
+    }
+}
+
+class Actors: NSObject, Codable {
+    var id: String?
+    var surname: String?
+    var name: String?
+    var naissance: String?
+    var lieu: String?
+    var descriptions: String?
+    var url: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id, surname, name, naissance, lieu, descriptions, url
+    }
+}
+
+class listViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    private var items: [[String:String]] = []
+    
+    @IBOutlet weak var collView: UICollectionView!
+    
+    private var listOfMovies: [Movie] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        collView.delegate = self
+        collView.dataSource = self
+        
+        loadMovies()
+    }
+    
+    private func loadMovie(val num: Int) {
+        AF
+            .request("http://92.222.22.146:3000/movies?number=" + String(num))
+            .validate(statusCode: [200])
+            .responseDecodable(of: Movie.self) {[weak self] (resp) in
+                switch resp.result {
+                case .success(let movieCreated):
+                    
+                    AF.request("http://92.222.22.146:3000/actors?number=" + String(movieCreated.director!))
+                    .validate(statusCode: [200])
+                    .responseDecodable(of: Actors.self) {[weak self] (resp) in
+                        switch resp.result {
+                        case .success(let directorCreate):
+                            movieCreated.director2 = directorCreate
+                            
+                            AF.request("http://92.222.22.146:3000/actors?number=" + String(movieCreated.producer!))
+                            .validate(statusCode: [200])
+                            .responseDecodable(of: Actors.self) {[weak self] (resp) in
+                                switch resp.result {
+                                case .success(let productorCreate):
+                                    movieCreated.producer2 = productorCreate
+                                    
+                                    self?.listOfMovies.append(movieCreated)
+                                    self?.collView.reloadData()
+                                case .failure(let error):
+                                    print(error)
+                                }
+                            }
+                            .responseString { (stringResponse) in
+                            }
+                        case .failure(let error):
+                            print(error)
+                        }
+                    }
+                    .responseString { (stringResponse) in
+                    }
+                    
+                case .failure(let error):
+                    print(error)
+                }
+            }
+            .responseString { (stringResponse) in
+            }
+    }
+    
+    private func loadMovies() {
+        
+        AF
+            .request("http://92.222.22.146:3000/movies_number")
+            .validate(statusCode: [200])
+            .responseDecodable(of: Int.self) {[weak self] (resp) in
+                switch resp.result {
+                case .success(let moviesNumber):
+                    var num = 0
+                    for _ in 0...moviesNumber {
+                        self?.loadMovie(val: num)
+                        num = num + 1
+                    }
+                case .failure(let error):
+                    print(error)
+                }
+            }
+            .responseString { (stringResponse) in
+            }
+    }
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of items
+        return listOfMovies.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell: CollectionViewCell? = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? CollectionViewCell
+        
+        guard let sureCell = cell else {
+            return UICollectionViewCell()
+        }
+        
+        let navController = navigationController
+        
+        sureCell.fill(withMovie: listOfMovies[indexPath.row], withNav: navController!)
+        
+        return sureCell
+    }
+}
