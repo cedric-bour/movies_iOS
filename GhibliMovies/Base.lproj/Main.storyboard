@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1RR-dq-6Gs">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -14,7 +14,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1RR-dq-6Gs" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="btx-BN-Qu5">
-                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -31,7 +31,7 @@
             <objects>
                 <viewController storyboardIdentifier="movieDetail" id="66K-22-v57" customClass="movieViewController" customModule="GhibliMovies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FpU-NX-tzW">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Title:" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z88-R2-HZ8">
@@ -72,10 +72,13 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line_blue" translatesAutoresizingMaskIntoConstraints="NO" id="Qcj-Bn-psr">
-                                <rect key="frame" x="20" y="288" width="174" height="19"/>
+                                <rect key="frame" x="20" y="288" width="200" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Jv4-5Q-7J2"/>
+                                </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHC-Fp-tNG">
-                                <rect key="frame" x="20" y="315" width="350" height="254"/>
+                                <rect key="frame" x="20" y="315" width="374" height="306"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -103,7 +106,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="favorties" translatesAutoresizingMaskIntoConstraints="NO" id="Na6-93-ov6">
-                                <rect key="frame" x="60" y="616" width="270" height="62"/>
+                                <rect key="frame" x="60" y="668" width="294" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="62" id="BgW-OL-J8r"/>
                                 </constraints>
@@ -117,8 +120,6 @@
                             <constraint firstItem="Z88-R2-HZ8" firstAttribute="top" secondItem="reT-0A-ebL" secondAttribute="top" constant="20" id="7Hv-tJ-BUx"/>
                             <constraint firstItem="Z88-R2-HZ8" firstAttribute="leading" secondItem="xBd-hY-2CI" secondAttribute="trailing" constant="8" id="8DL-z8-5DH"/>
                             <constraint firstItem="7Gi-7f-NEc" firstAttribute="top" secondItem="Szq-Cc-HHw" secondAttribute="bottom" id="B61-AK-hGx"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Qcj-Bn-psr" secondAttribute="trailing" constant="180" id="C2o-nm-Y4I"/>
-                            <constraint firstItem="reT-0A-ebL" firstAttribute="trailing" secondItem="Z88-R2-HZ8" secondAttribute="trailing" constant="20" id="CVo-pU-2lb"/>
                             <constraint firstItem="OaM-yt-qS6" firstAttribute="width" secondItem="xBd-hY-2CI" secondAttribute="width" multiplier="0.855556" id="Cnn-JS-u3X"/>
                             <constraint firstItem="MHC-Fp-tNG" firstAttribute="top" secondItem="Qcj-Bn-psr" secondAttribute="bottom" constant="8" id="GXN-S5-bF9"/>
                             <constraint firstItem="Lil-h8-HhR" firstAttribute="top" secondItem="7Gi-7f-NEc" secondAttribute="bottom" id="Haa-oi-jHx"/>
@@ -158,18 +159,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JIM-RD-Sxi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1344.6153846153845" y="91.706161137440759"/>
+            <point key="canvasLocation" x="1343.4782608695652" y="91.071428571428569"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="ryM-tD-SJb">
             <objects>
                 <viewController id="wbk-1H-KSG" customClass="listViewController" customModule="GhibliMovies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aBd-8y-VhZ">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="BJx-kn-pZO">
-                                <rect key="frame" x="0.0" y="164" width="390" height="680"/>
+                                <rect key="frame" x="0.0" y="164" width="414" height="732"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0nL-E9-Akk">
@@ -180,7 +181,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="uWO-k3-eGS" customClass="CollectionViewCell" customModule="GhibliMovies" customModuleProvider="target">
-                                        <rect key="frame" x="61" y="0.0" width="268" height="246"/>
+                                        <rect key="frame" x="73" y="0.0" width="268" height="246"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="268" height="246"/>
@@ -209,7 +210,7 @@
                                 </connections>
                             </collectionView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="VUt-6V-PsQ">
-                                <rect key="frame" x="50" y="88" width="290" height="68"/>
+                                <rect key="frame" x="50" y="88" width="314" height="68"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KBk-l3-K4d"/>
@@ -235,7 +236,7 @@
             <objects>
                 <viewController storyboardIdentifier="actorsDetail" id="hlt-Nr-3lB" customClass="actorViewController" customModule="GhibliMovies" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IQe-nv-tDG">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Name:" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5Z-HM-0GD">
@@ -276,10 +277,13 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="line_blue" translatesAutoresizingMaskIntoConstraints="NO" id="Y7R-rm-Gn8">
-                                <rect key="frame" x="20" y="288" width="174" height="12"/>
+                                <rect key="frame" x="20" y="288" width="200" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="0V1-er-SAM"/>
+                                </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t46-l8-XaH">
-                                <rect key="frame" x="20" y="308" width="350" height="404"/>
+                                <rect key="frame" x="20" y="308" width="374" height="456"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -313,10 +317,8 @@
                             <constraint firstItem="cdw-9B-2Bh" firstAttribute="leading" secondItem="ngb-7m-kaO" secondAttribute="trailing" constant="8" id="TP7-QT-ur3"/>
                             <constraint firstAttribute="bottomMargin" secondItem="t46-l8-XaH" secondAttribute="bottom" constant="10" id="VKJ-sY-Af2"/>
                             <constraint firstItem="ngb-7m-kaO" firstAttribute="leading" secondItem="eVc-0I-y4e" secondAttribute="leading" constant="20" id="XbU-1P-Fpx"/>
-                            <constraint firstItem="eVc-0I-y4e" firstAttribute="trailing" secondItem="J5Z-HM-0GD" secondAttribute="trailing" constant="20" id="YI5-aE-afA"/>
                             <constraint firstItem="eVc-0I-y4e" firstAttribute="trailing" secondItem="t46-l8-XaH" secondAttribute="trailing" constant="20" id="bhJ-Qy-j5U"/>
                             <constraint firstItem="J5Z-HM-0GD" firstAttribute="top" secondItem="eVc-0I-y4e" secondAttribute="top" constant="20" id="gzz-YS-X2p"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Y7R-rm-Gn8" secondAttribute="trailing" constant="180" id="kce-Ga-2wT"/>
                             <constraint firstItem="8ye-o9-9JE" firstAttribute="width" secondItem="ngb-7m-kaO" secondAttribute="width" multiplier="0.855556" id="pe2-Fz-kWx"/>
                             <constraint firstItem="Y7R-rm-Gn8" firstAttribute="leading" secondItem="eVc-0I-y4e" secondAttribute="leading" constant="20" id="qJI-LY-XE5"/>
                             <constraint firstItem="8ye-o9-9JE" firstAttribute="top" secondItem="J5Z-HM-0GD" secondAttribute="bottom" id="t0h-gy-2a6"/>
